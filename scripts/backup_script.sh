@@ -10,5 +10,13 @@
 # Usage: 
 # backup_script
 
+echo "Hello, ${USER^}"
+echo "I will now back up your home directory, ${HOME}"
 
-tar -cvf ~/bash-scratch/my_backup_"$(date +%Y%m%d_%H%M%S)".tar ~/* 2>/dev/null
+currentdir=$(pwd)
+echo "You are running this script from ${currentdir}"
+echo "Therefore, I will save the backup in ${currentdir}"
+
+tar -cf ${currentdir}/my_backup_$(date +%Y%m%d_%H%M%S).tar ${HOME}/* 2>/dev/null
+
+echo "Backup Completed Successfully."
