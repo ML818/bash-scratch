@@ -111,5 +111,30 @@ echo "scale=3; 10/3" | bc
   - it also can be reverted by `{100..1}`, `{z..a}`
   - it can set increment value, `{1..100..4}` which is 1 5 9 ... 
   - it can set different format like `{001..100}`
-  - batch operation like touch month{01..12}/day{01..31}
+  - batch operation like `touch month{01..12}/day{01..31}`
+
+#### Bash Processes Command Lines
+1. Tokenisating
+2. Command Identification
+3. Expansions
+4. Quote Removal
+5. Redirection
+> done these five steps, result will be executed.
+
+#### Quoting
+> Removing Special Meanings
+1. Backslash `\`: Removes special meaning from **next** character.
+2. Single Quotes `''`: Remove special meaning from **all** character inside.
+3. Double Quotes `""`: Remove special meaning from **all except** dollar sign `$` and backticks `.
+
+#### Tokenisation
+##### Metacharacters
+- `|`
+- `&`
+- `;`
+- `()`
+- `<>`
+- space, tab and newline
+
+
 
