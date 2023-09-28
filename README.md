@@ -137,4 +137,42 @@ echo "scale=3; 10/3" | bc
 - space, tab and newline
 
 
+#### Compound Commands
+> Reserved word
+example `if`
+```bash
+if [condition]
+then
+  [statements]
+fi
+```
+
+#### Expansions
+> Four stages of Expansions
+1. Brace Expansion
+2.  
+  - Parameter Expansion
+  - Arithmetic Expansion
+  - Command Substitution
+  - Tilde Expansion
+3. Word Splitting
+4. Globbing
+
+> Every stage is independent, you can not mix them.
+> Same stage are all given the **same priority**, **left to right**
+
+##### Word Splitting
+> Only performed on the results of **unquoted**:
+- Parameter Expansion
+- Arithmetic Expansion
+- Command Substitution
+**Wrap that expansions in double quotes**, which will become a single word.
+
+##### Globbing
+- Only performed on **words**(not operators)
+- Words that contain unquoted **Special Pattern Characters**:
+  - `*`: which can match any characters, even empty.
+  - `?`: which can match exactly single character.
+  - `[`: which can match single character by a range that customized, like `[a-k]`. 
+
 
