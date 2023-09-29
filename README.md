@@ -188,3 +188,11 @@ fi
 - `2>` -- which usually follow `/dev/null`
 
 
+### Positional Parameter
+```shell
+# $0 is always command 
+$0 $1 $2 $3 ...
+command $1 $2 $3 ...
+```
+
+> When the number of arguments greater than 9, it must be ${10} like that.
