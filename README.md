@@ -195,4 +195,23 @@ $0 $1 $2 $3 ...
 command $1 $2 $3 ...
 ```
 
-> When the number of arguments greater than 9, it must be ${10} like that.
+> When the number of arguments greater than 9, it must be ${10} like this.
+
+### Special Parameters
+> Unmodifiable
+
+- `$#` : count the number of command line arguments 
+- `$0` : the name of script
+- `$@` : signify all command line arguments
+  - unquoted : `$@`   -- $1 $2 $3...$n
+    > unquoted will ignore `" "` and `' '`, example like 
+    > `test.sh`
+    > ```bash
+    > #!/bin/bash
+    > touch $@
+    > ```
+    > `test.sh "A B" "C D"`
+    > it will generate four files not two. If change to `"$@"`, it will generate two files
+  - quoted   : `"$@"` -- "$1" "$2" "$3"..."$n" 
+- `$\*` : Unquoted `$\*` is exactly the same as unquoted `$@`
+  - `"$\*"` provides all positional parameters as **one word**, but separated by the first character of the IFS variable. The final word is **not subject to further word splitting**.
