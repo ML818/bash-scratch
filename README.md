@@ -215,3 +215,19 @@ command $1 $2 $3 ...
   - quoted   : `"$@"` -- "$1" "$2" "$3"..."$n" 
 - `$\*` : Unquoted `$\*` is exactly the same as unquoted `$@`
   - `"$\*"` provides all positional parameters as **one word**, but separated by the first character of the IFS variable. The final word is **not subject to further word splitting**.
+
+
+#### Read Command
+> `read` command can get input of user, and store in a variable.
+```bash
+read var_name
+
+# describe the prompt which need to be for variable
+read -p "describe_things" var_name
+
+# hide the input of user, useful to password, but not exactly save.
+read -s -p "Enter your password: " passwd
+
+# limit the length of input
+read -N 6 "Enter your postcode"
+```
