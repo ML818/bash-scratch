@@ -231,3 +231,13 @@ read -s -p "Enter your password: " passwd
 # limit the length of input
 read -N 6 "Enter your postcode"
 ```
+
+#### Select Command
+```bash
+select var_name in v1 v2 v3 ...
+do
+   [commands]
+   break
+done
+```
+
