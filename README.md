@@ -256,7 +256,7 @@ done
   - `<command1> || <command2>` : only if `command1` executed **failed**, `command2` will be executed. 
 
 
-### Test Commands
+### Test Commands with Conditional Operators
 
 > Comparison
 > If it is true, exit code will be 0.
@@ -327,8 +327,33 @@ b=goodbye
 ```
 
 #### Universal
-> They can check any types of data.
+> They can check above all types of data.
 - `=`
 - `==`
 - `!=`
 
+### If Statements
+> Check the exit status of **test commands**
+```bash
+if [ <test commands> ]
+then
+	<commands>
+elif [ <test commands> ]
+then
+  	<commands>
+else
+  	<commands>
+fi
+```
+
+#### Combine Test Commands
+- `&&`
+- `||`
+
+```bash
+if [ <test1> ] && [ <test2> ]; then
+	<commands>
+else
+	<commands>
+fi
+```
