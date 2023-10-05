@@ -357,3 +357,15 @@ else
 	<commands>
 fi
 ```
+
+### Case Statements
+
+##### example
+```bash
+case "$number" in 
+	[0-9]) echo "a single digit number";;
+	[0-9][0-9]) echo "a two digits number";;
+	[0-9][0-9][0-9]) echo "a three digits number";;
+	*) echo "more than three digits."
+esac
+```
