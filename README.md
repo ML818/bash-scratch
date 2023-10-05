@@ -240,4 +240,95 @@ do
    break
 done
 ```
+---
+
+## Logic
+
+### List Operators
+
+- `&`
+  - `<command1> & <command2>` : they will be executed **asynchronously**.
+- `;`
+  - `<command1> ; <command2>` : they will be executed **one after one**.
+- `&&`
+  - `<command1> && <command2>` : only if `command1` executed **successfully**, `command2` will be executed. 
+- `||`
+  - `<command1> || <command2>` : only if `command1` executed **failed**, `command2` will be executed. 
+
+
+### Test Commands
+
+> Comparison
+> If it is true, exit code will be 0.
+
+```bash
+# example
+[ 2 -eq -2 ] ; echo $?  # 1
+
+a=hello
+b=goodbye
+[[ $a = $b ]] ; echo $?  # 1
+```
+#### Numbers
+- `gt` >
+- `lt` <
+- `geq` >=
+- `leq` <=
+
+#### Variable
+- `-z` Check specific variable wehter defined.
+> You can regard it as the length of string is zero, true, or false
+```bash
+# if var is an empty string, $? will return 0, or return 1
+[[ -z $var ]] ; echo $?
+```
+- `n` The function is opposite with `-z`.
+> You can regard it as the length of string is not zero, true, or false
+```bash
+# if var is an empty string, $? will return 1, or return 0
+[[ -n $var ]] ; echo $?
+```
+
+#### Files
+- `-e` Check the specific file wether **exists**.
+```bash
+# if var exists, $? will return 0, or return 1
+[[ -e var ]] ; echo $?
+```
+- `-f` Check the specific object wehter **a regular file**.
+```bash
+# if var is a regular file, $? will return 0, or return 1
+[[ -f var ]] ; echo $?
+```
+- `-d` Check the specific object wether a **directory**.
+```bash
+# if var is a directory, $? will return 0, or return 1
+[[ -d var ]] ; echo $?
+```
+- `-x` Check the specific file wether has **executable permission**.
+```bash
+# if var is executable, $? will return 0, or return 1
+[[ -x var ]] ; echo $?
+```
+- `-r` Check the specific file wether **readable**.
+```bash
+# if var is readable, $? will return 0, or return 1
+[[ -r var ]] ; echo $?
+```
+- `-w` Check the specific file wether **writable**.
+```bash
+# if var is writable, $? will return 0, or return 1
+[[ -w var ]] ; echo $?
+```
+- `-nt` Check the specific file wether **newer than** another file.
+```bash
+# if var1 newer than var2, $? will return 0, or return 1
+[[ var1 -nt var2 ]] ; echo $?
+```
+
+#### Universal
+> They can check any types of data.
+- `=`
+- `==`
+- `!=`
 
