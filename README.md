@@ -369,3 +369,37 @@ case "$number" in
 	*) echo "more than three digits."
 esac
 ```
+
+
+
+### While loops
+
+```bash
+while [ <condition> ]
+do
+	<commands>
+done
+```
+> When the `condition` is true, `commands` will continue running. 
+
+
+### getopts
+- It can add options which followed, like "a:b:c:", when you running this script.
+- Another input is `$OPTARG` which follows the options.
+
+example
+```bash
+# test.sh
+while getopts "a:b:" opt
+do
+	case $opt in
+		a) echo $OPTARG;;
+		b) echo $OPTARG;;
+		?);;
+	esac
+done
+
+# Command line
+./test.sh -a 24  # output 24
+```
+
