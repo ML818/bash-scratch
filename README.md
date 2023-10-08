@@ -414,3 +414,36 @@ do
 	<commands>
 done < "$1"
 ```
+
+## Arrays and For loops
+
+### Indexed Arrays
+
+```bash
+# create indexed array
+arr_name=(1 2 c 6 8)
+
+# output all elements in array
+echo ${arr_name[@]}
+
+# output specific element by index
+# the index is start from 0
+echo ${arr_name[0]}
+
+# slice array
+echo ${arr_name[@]:<start_index>:<number>}
+
+# add an element
+arr_name+=(<value>)
+
+# modify specific element with index
+arr_name[<index>]=<new_value>
+
+# delete index and element
+unset arr_name[<index>]
+
+# check the index of array
+echo ${!arr_name[@]}
+```
+
+
