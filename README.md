@@ -446,4 +446,15 @@ unset arr_name[<index>]
 echo ${!arr_name[@]}
 ```
 
+### readarray command
 
+> Read lines from file into array variable.
+> Each line is one element.
+ 
+```bash
+# create array by readarray with content of file
+readarray -t <arr_name> < <file>
+
+# create array with command line
+readarray -t <arr_name> < <(<commands>)
+```
