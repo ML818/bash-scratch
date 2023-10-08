@@ -1,0 +1,11 @@
+HTTP/1.1 301 Moved Permanently
+Server: Tengine
+Date: Sun, 08 Oct 2023 08:29:21 GMT
+Content-Type: text/html
+Content-Length: 262
+Connection: keep-alive
+Location: https://www.taobao.com/
+Via: cache13.cn5502[,0]
+Timing-Allow-Origin: *
+EagleId: 74abaa0d16967537614397369e
+

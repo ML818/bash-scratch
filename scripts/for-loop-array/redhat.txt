@@ -1,0 +1,13 @@
+HTTP/1.1 301 Moved Permanently
+Server: GHost
+Content-Length: 0
+Location: https://www.redhat.com/en
+Date: Sun, 08 Oct 2023 08:29:22 GMT
+Connection: keep-alive
+x-rh-edge-alb-dc: prod_rhdc_mpp_aws_us_west_2
+x-rh-edge-request-id: f93f7f5
+x-rh-edge-reference-id: 0.ce8bf2b6.1696753762.f93f7f5
+x-rh-edge-cache-status: Redirect from child
+Set-Cookie: akaalb_prod_rhdc=1696754062~op=lb_prod_rhdc_rhdc:prod_rhdc_mpp_aws_us_west_2|~rv=16~m=prod_rhdc_mpp_aws_us_west_2:0|~os=c98352339ebdfe81b2eed38275410b62~id=f26494b65a5c31fd1206d70cf440e253; path=/; Expires=Sun, 08 Oct 2023 08:34:22 GMT; HttpOnly; Domain=.www.redhat.com
+Strict-Transport-Security: max-age=31536000
+

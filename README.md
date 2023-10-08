@@ -458,3 +458,22 @@ readarray -t <arr_name> < <file>
 # create array with command line
 readarray -t <arr_name> < <(<commands>)
 ```
+
+### Iterating with For loops
+
+```bash
+for <elementName> in <array>
+do
+	<commands>
+done
+```
+
+> In `for-loop-array`, `project.sh` contained some interesting things which needs more descriptions.
+- `cut` command -- Slice string
+	- `-d "<delimiter>"`: You can think `delimiter` is a seperator
+	- `-f <number>` : If this string contained several delimiters, `number` that which one you want to choose.
+	- `echo "www.microsoft.com" | cut -d "." -f 2` : result is `microsoft`.
+		- It sliced things between 1st `.` and 2nd `.`. So `-f 2` is the meaning.
+- Before `cut` command, I figure a normal way out for string slice.
+	- `${url#*.}` : It will remove all things at left of first `.`, include first `.`
+	- `${url%.*}` : It will remove all things at right of last `.`, include last `.`

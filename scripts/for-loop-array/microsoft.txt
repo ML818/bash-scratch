@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Content-Length: 1020
+Content-Type: text/html
+ETag: "6082151bd56ea922e1357f5896a90d0a:1425454794"
+Last-Modified: Wed, 04 Mar 2015 07:39:54 GMT
+Server: AkamaiNetStorage
+Expires: Sun, 08 Oct 2023 08:29:22 GMT
+Cache-Control: max-age=0, no-cache, no-store
+Pragma: no-cache
+Date: Sun, 08 Oct 2023 08:29:22 GMT
+Connection: keep-alive
+
