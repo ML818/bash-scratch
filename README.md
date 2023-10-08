@@ -403,3 +403,14 @@ done
 ./test.sh -a 24  # output 24
 ```
 
+### read-while loops
+
+> Read a file line by line
+
+```bash
+while read line
+do
+	echo $line
+	<commands>
+done < "$1"
+```
