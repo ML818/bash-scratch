@@ -213,8 +213,8 @@ command $1 $2 $3 ...
     > `test.sh "A B" "C D"`
     > it will generate four files not two. If change to `"$@"`, it will generate two files
   - quoted   : `"$@"` -- "$1" "$2" "$3"..."$n" 
-- `$\*` : Unquoted `$\*` is exactly the same as unquoted `$@`
-  - `"$\*"` provides all positional parameters as **one word**, but separated by the first character of the IFS variable. The final word is **not subject to further word splitting**.
+- `$*` : Unquoted `$*` is exactly the same as unquoted `$@`
+  - `"$*"` provides all positional parameters as **one word**, but separated by the first character of the IFS variable. The final word is **not subject to further word splitting**.
 
 
 #### Read Command
@@ -384,7 +384,7 @@ done
 
 
 ### getopts
-- It can add options which followed, like "a:b:c:", when you running this script.
+- It can add options which followed, like `"a:b:c:"`, when you running this script.
 - Another input is `$OPTARG` which follows the options.
 
 example
@@ -477,3 +477,42 @@ done
 - Before `cut` command, I figure a normal way out for string slice.
 	- `${url#*.}` : It will remove all things at left of first `.`, include first `.`
 	- `${url%.*}` : It will remove all things at right of last `.`, include last `.`
+
+
+### Shellcheck
+
+> A tool that can check **syntax** of bash scripts. 
+> [shellcheck](www.shellcheck.net)
+>
+> Also it can be installed in local machine
+> `sudo dnf/apt install shellcheck`
+
+Usage: `shellcheck <file>`
+
+> Tne issue that shellcheck can not check.
+- Enviroment issues
+	- if files or directory exists
+	- permissions
+	- if commands or apps installed
+
+
+
+### Error Check
+
+
+### Help
+> Check the specific command is internal or external
+> `type -a <command>` : check the command which exactly is.
+
+#### Internal Commands
+> It is built into the bash shell.
+- `help <command>`
+- `help -d <command>` : description of the command.
+
+#### Externak Commands
+> It is external to the bash shell.
+- `info <command>`
+- `man <command>`
+- `<command> --help`
+
+
