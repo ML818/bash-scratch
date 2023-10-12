@@ -13,4 +13,9 @@ echo $(pwd)
 list=$(ls)
 
 select item in ${list[@]}
-
+do
+	case $item in
+		*.sh) echo "Running $item ..."; bash $item; exit 0 ;;
+		*) echo "$item is not an executable file."
+	esac
+done
