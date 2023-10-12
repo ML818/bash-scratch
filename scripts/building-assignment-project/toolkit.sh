@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Author: hisoka
+# Created Date: 2023-10-12
+
+# Description:
+# Choose a executable file to execution.
+
+# Usage:
+# ./toolkit.sh
+
+
+
 read -p "Please Enter your scripts path:(default in $HOME) " path
 
 cd $HOME/$path

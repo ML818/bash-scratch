@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Author: hisoka
+# Created Date: 2023-10-11
+
+# Description:
+# Filter older files and delete them.
+
+# Usage:
+# ./cruft_remover.sh
+
 
 # Check the folder wether existed.
 cd $HOME
@@ -17,9 +26,10 @@ else
 fi
 
 # Gather files in a text file which unmodified during $days.
-find $fn -mtime $days -type f > files_unmodified_$days.txt
-readarray -t files < files_unmodified_$days.txt
-
+## find $fn -mtime $days -type f > files_unmodified_$days.txt
+## readarray -t files < files_unmodified_$days.txt
+## improvement
+readarray -t files < <(find $fn -mtime $days -type f -maxdepth 1)
 
 echo "There are ${#files[@]} files that unmodified totally."
 read -p "Do you want to view the list?(Y/n)" flag

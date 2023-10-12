@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Author: hisoka
+# Created Date: 2023-10-11
+
+# Description:
+# Organising files by means of different types.
+
+# Usage:
+# ./folder_organiser.sh
+
 
 read -p "Which folder do you want to organise? (default in $HOME)" fname
 
