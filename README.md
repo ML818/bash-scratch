@@ -553,7 +553,7 @@ atrm <job_number>
 
 
 ### Cron
-
+> **machine must be on**.
 ```bash
 
 # edit cron 
@@ -582,6 +582,10 @@ crontab -e
 - `cron.weekly`
 > Depend on your tasks, put executable script into specific folder, it is in automation.
 
+##### If you need `sudo` in commands
+>put the task into `/etc/crontab`
+
+
 ##### create your own cron folder
 ```bash
 mkdir path_to_cron_folder
@@ -596,4 +600,19 @@ crontab -e
 run-parts path_to_folder --report
 ```
 > `run-parts` : it will run all executable files in specific folder.
+
+
+
+### Anacron
+> Whatever machine is on or off, anacron can **recover missed jobs**.
+> `man 5 anacrontab` to view more details.
+
+`sudo vim /etc/anacrontab`
+```
+period in days   delay in minutes   job-identifier   command
+1         5    cron.daily          nice run-parts /etc/cron.daily
+7         0    cron.weekly         nice run-parts /etc/cron.weekly
+@monthly  0    cron.monthly        nice run-parts /etc/cron.monthly
+```
+
 
