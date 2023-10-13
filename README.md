@@ -549,8 +549,51 @@ atrm <job_number>
 ```
 
 #### Security
-> `at.deny` and `at.allow` these two files can limit users to use `at` daemons.
+> `/etc/at.deny` and `/etc/at.allow` these two files can limit users to use `at` daemons.
 
 
 ### Cron
+
+```bash
+
+# edit cron 
+crontab -e
+
+# Setting task
+# min hour dayofmonth month dayofweek
+  *    *      *        *       *
+
+* * * * * <commands>
+
+```
+
+> More details
+> `man 5 crontab` 
+
+
+#### crontab guru
+> [An online tool for cron](crontab.guru)
+
+#### cron directories
+`ls /etc | grep cron`
+- `cron.daily`
+- `cron.hourly`
+- `cron.monthly`
+- `cron.weekly`
+> Depend on your tasks, put executable script into specific folder, it is in automation.
+
+##### create your own cron folder
+```bash
+mkdir path_to_cron_folder
+
+mv <scripts> path_to_folder
+
+crontab -e
+
+# set specific time
+
+# command
+run-parts path_to_folder --report
+```
+> `run-parts` : it will run all executable files in specific folder.
 
