@@ -515,4 +515,42 @@ Usage: `shellcheck <file>`
 - `man <command>`
 - `<command> --help`
 
+## Scheduling and Automation
+
+### `at` Command
+
+> It is a deferred execution scheduler.
+> If you set a script with `at`
+> But it only executes **once** at the time you set.
+
+```bash
+# create a task
+
+## Time Setting
+# time can be 12:35 or 3pm, 10a
+at 12:35
+> <commands>
+
+# from now, after num minutes or hours, execute task
+at now + <num> <minutes>/<hours>
+
+# specific day and time
+at 4:27pm Friday
+
+# specific file to execution
+at <time> -f <path_to_file>
+
+# check tasks list
+at -l
+atq
+
+# remove task
+atrm <job_number>
+```
+
+#### Security
+> `at.deny` and `at.allow` these two files can limit users to use `at` daemons.
+
+
+### Cron
 
