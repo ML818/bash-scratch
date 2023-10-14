@@ -615,4 +615,10 @@ period in days   delay in minutes   job-identifier   command
 @monthly  0    cron.monthly        nice run-parts /etc/cron.monthly
 ```
 
+## Remote
+
+### ssh (secure shell)
+
+### scp (secure copy)
+
 
