@@ -620,5 +620,15 @@ period in days   delay in minutes   job-identifier   command
 ### ssh (secure shell)
 
 ### scp (secure copy)
+> Copy files to another machine which it in the same LAN or known public IP
+```bash
+scp <source> <target>
 
+# example
+## copy local files to remote machine.
+scp <files> <user>@<ip>:<path>
+
+## copy remote files to local machine.
+scp <user>@<ip>:<path>/<files> <path>
+```
 
