@@ -466,6 +466,12 @@ for <elementName> in <array>
 do
 	<commands>
 done
+
+# or
+for (( i=0; i<10; i++ ))
+do
+	<commands>
+done
 ```
 
 > In `for-loop-array`, `project.sh` contained some interesting things which needs more descriptions.
