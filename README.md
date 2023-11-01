@@ -74,8 +74,9 @@ ${parameter:-3}
 
 #### Shell expansions
 - `${parameter}`
-- `$(command)` : _shell command_
-- $(( expression )) : _mathematic_
+- `$(command)` : **shell command**
+	- ``command`` : ```` is the same as `()`
+- $(( expression )) : **mathematic**
 
 **Command substitution**
 
@@ -638,3 +639,13 @@ scp <files> <user>@<ip>:<path>
 scp <user>@<ip>:<path>/<files> <path>
 ```
 
+### rsync
+> It is the same as `scp`, maybe even better
+- `rsync -azv -e 'ssh -p 22' <SOURCE_ADDR> <DESTI_ADDR> `
+	- `-a` : if you transfer directory, it is requirement.
+	- `-z` : compress file
+	- `-v` : increase verbosity(visual)
+	- `-e` : execute. `ssh -p 22` is take specific port to transfer.
+	- ADDR : the format is the same as `scp`.
+
+more details by `man rsync`
